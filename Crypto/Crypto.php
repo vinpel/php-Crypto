@@ -12,37 +12,8 @@ r, the memory cost;
 p, the parallelization cost.
 */
 
-class crypto(){
+class Crypto(){
 
-	function myScrypt($pass, $salt,$N,$r,$p,$size){
-		//we want same format, input & output will be in hex, but pass & salt need to bin in binary
-		$pass=hex2bin($pass);
-		$salt=hex2bin($salt);
-		if ($N == 0 || ($N & ($N - 1)) != 0) {
-			throw new \InvalidArgumentException("N must be > 0 and a power of 2");
-		}
-
-		if ($N > PHP_INT_MAX / 128 / $r) {
-			throw new \InvalidArgumentException("Parameter N is too large");
-		}
-
-		if ($r > PHP_INT_MAX / 128 / $p) {
-			throw new \InvalidArgumentException("Parameter r is too large");
-		}
-		if (!extension_loaded("scrypt"))
-		return bin2hex(Scrypt::calc($pass, $salt,$N,$r,$p,$size));	//tyhe function return in binary
-		else
-		return scrypt($pass, $salt,$N,$r,$p,$size);		//return in already in hex
-	}
-
-
-	function Pbkdf2($hash, $pass=null, $salt=null, $iterations, $length)
-	{
-		if ($salt ==null)
-		$salt = Rand::getBytes(strlen($pass), true);
-		$key  = Pbkdf2::calc($hash, $pass, $salt, $iterations, $length);
-		return $key;
-	}
 
 	//https://gist.github.com/narfbg/8793435
 	/**
@@ -86,6 +57,36 @@ class crypto(){
 		}
 
 		return bin2hex(substr($key, 0, $length));
+	}
+
+	function myScrypt($pass, $salt,$N,$r,$p,$size){
+		//we want same format, input & output will be in hex, but pass & salt need to bin in binary
+		$pass=hex2bin($pass);
+		$salt=hex2bin($salt);
+		if ($N == 0 || ($N & ($N - 1)) != 0) {
+			throw new \InvalidArgumentException("N must be > 0 and a power of 2");
+		}
+
+		if ($N > PHP_INT_MAX / 128 / $r) {
+			throw new \InvalidArgumentException("Parameter N is too large");
+		}
+
+		if ($r > PHP_INT_MAX / 128 / $p) {
+			throw new \InvalidArgumentException("Parameter r is too large");
+		}
+		if (!extension_loaded("scrypt"))
+		return bin2hex(Scrypt::calc($pass, $salt,$N,$r,$p,$size));	//tyhe function return in binary
+		else
+		return scrypt($pass, $salt,$N,$r,$p,$size);		//return in already in hex
+	}
+
+
+	function Pbkdf2($hash, $pass=null, $salt=null, $iterations, $length)
+	{
+		if ($salt ==null)
+		$salt = Rand::getBytes(strlen($pass), true);
+		$key  = Pbkdf2::calc($hash, $pass, $salt, $iterations, $length);
+		return $key;
 	}
 	function now()
 	{
