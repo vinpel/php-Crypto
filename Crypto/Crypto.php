@@ -66,7 +66,7 @@ class Crypto{
 		// toujours pareil, on met de l'hexa en entrée et ne sorti
 		$key=hex2bin($key);
 		$salt=hex2bin($salt);
-		
+
 		if ( ! in_array($digest, array('sha224', 'sha256', 'sha384', 'sha512'), TRUE))
 		{
 			return FALSE;
@@ -107,6 +107,10 @@ class Crypto{
 	may store key element for futher tests
 	*/
 	public function generateNewDSAKey($SSLRep,$force=false,$storeKeyElement=true) {
+
+		if (!is_dir($SSLRep)){
+			@mkdir($SSLRep, 0777, true);
+		}
 		//we don't recreate key if one exist ( and no force arg)
 		if ( !is_file($SSLRep . 'private_key.pem') || $force===true){
 			//create new Key
