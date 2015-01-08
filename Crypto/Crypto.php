@@ -106,7 +106,7 @@ class Crypto{
 	store public,private key in ./myApp/storage/SSL/
 	may store key element for futher tests
 	*/
-	public function generateNewDSAKey($SSLRep,$force=false,$storeKeyElement=true) {
+	static public function generateNewDSAKey($SSLRep,$force=false,$storeKeyElement=true) {
 
 		if (!is_dir($SSLRep)){
 			@mkdir($SSLRep, 0777, true);
