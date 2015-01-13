@@ -28,5 +28,6 @@ install:
 
 
 script:
+  - composer dump-autoload
   - codecept build
   - codecept run -vvv

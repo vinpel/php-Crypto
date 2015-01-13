@@ -18,6 +18,7 @@ I have implemented the common test vector.
 
 
 ```javascript
+composer dump-autoload
 codecept run
 ```
 
