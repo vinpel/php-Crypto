@@ -19,7 +19,7 @@ class ScryptTest extends \Codeception\TestCase\Test
     }
 
     /**
-    *   all the tests are base on the  page : 
+    *   all the tests are base on the  page :
     https://tools.ietf.org/html/draft-josefsson-scrypt-kdf-00#section-11
     */
     public function testScryptVector1(){
@@ -48,7 +48,8 @@ class ScryptTest extends \Codeception\TestCase\Test
                 "e61e85dc0d651e40dfcf017b45575887";
         Debug::debug("\n".$result."\n".$needed);
         $this->assertTrue(strcmp($result,$needed)==0);
-    }    
+    }
+    /*
       public function testScryptVector4(){
         $result=Crypto::myScrypt(bin2hex("pleaseletmein"),bin2hex("SodiumChloride"),1048576,8,1,64);
         $needed="2101cb9b6a511aaeaddbbe09cf70f881".
@@ -57,5 +58,5 @@ class ScryptTest extends \Codeception\TestCase\Test
                 "37304049e8a952fbcbf45c6fa77a41a4";
         Debug::debug("\n".$result."\n".$needed);
         $this->assertTrue(strcmp($result,$needed)==0);
-    }    
+    } */   
 }

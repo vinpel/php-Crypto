@@ -21,7 +21,7 @@ I have implemented the common test vector.
 codecept run
 ```
 
-What **will** fail for now :
+The test vector **will** fail for now, they are in comment but present in test file :
 
 * test scrypt vector 4
 * test scrypt vector 5

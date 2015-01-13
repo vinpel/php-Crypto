@@ -28,6 +28,5 @@ install:
 
 
 script:
-  - cd ./tests
   - codecept build
   - codecept run -vvv
