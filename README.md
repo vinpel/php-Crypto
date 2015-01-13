@@ -1,4 +1,5 @@
 # PHP Crypto library
+[![Build Status](https://travis-ci.org/vinpel/php-Crypto.svg?branch=master)](https://travis-ci.org/vinpel/php-Crypto)
 
 You will find the integration  of :
 
