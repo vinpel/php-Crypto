@@ -1,13 +1,12 @@
 {
 	"name": "vinpel/crypto",
 	"description": "crypto tools",
-	"version": "0.8",
 	"homepage": "https://github.com/vinpel/PHP-Crypto.git",
 	"license": "MIT",
 	"require": {
 		"php": ">=5.4.0"
 	},
-	
+
 	"repositories": [
 		{
 			"type": "git",
@@ -15,12 +14,12 @@
 		}
 	],
 	"authors": [
-	
+
 		{
 			"name": "Vincent Pélisset",
 			"email": "vinpel@hotmail.com",
 			"role": "Developer"
-		}		
+		}
 	],
 	"autoload": {
 		"classmap": ["."]
