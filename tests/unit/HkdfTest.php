@@ -1,10 +1,9 @@
 <?php
 
-
-use Crypto\Crypto;
+use \Crypto\Crypto;
 use \Codeception\Util\Debug;
 
-class HkdfTest extends \Codeception\TestCase\Test
+class HkdfTest extends \Codeception\Test\Unit
 {
     /**
      * @var \UnitTester

@@ -6,22 +6,22 @@
 	"require": {
 		"php": ">=5.4.0"
 	},
-
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/vinpel/PHP-Crypto"
-		}
-	],
 	"authors": [
 
 		{
-			"name": "Vincent Pélisset",
+			"name": "Vincent P..lisset",
 			"email": "vinpel@hotmail.com",
 			"role": "Developer"
 		}
 	],
-	"autoload": {
-		"classmap": ["."]
+    "autoload": {
+        "psr-4": {
+		"Crypto\\": "Crypto/",
+		"Zend\\": "Zend/"
+}
+    },
+	"require-dev": {
+	    "codeception/base": "^2.2.3",
+	    "codeception/verify": "~0.3.1"
 	}
 }
