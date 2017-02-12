@@ -1,0 +1,8 @@
+setup:
+  composer:
+    action: "install"
+  shell:
+      - "%BUILD_PATH%vendor/bin/codecept build"
+test:
+  codeception:
+    config: "codeception.yml"
