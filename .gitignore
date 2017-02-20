@@ -1,8 +1,10 @@
-/test/keys
-/test/tests/_output
-
+/tests/keys/*
+/tests/test-keys/*
+/tests/tests/_output
+/tests/_support/_generated
 /tests/_output/*
 /vendor/
 
 tests/_output/*
 /keys/*
+.rnd
